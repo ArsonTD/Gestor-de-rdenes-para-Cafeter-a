@@ -1,6 +1,59 @@
 @Cafeteria_API_HostAddress = http://localhost:5287
 
-GET {{Cafeteria_API_HostAddress}}/weatherforecast/
+### Listar categorías
+GET {{Cafeteria_API_HostAddress}}/api/categorias
 Accept: application/json
 
-###
+### Obtener una categoría
+GET {{Cafeteria_API_HostAddress}}/api/categorias/1
+Accept: application/json
+
+### Crear categoría
+POST {{Cafeteria_API_HostAddress}}/api/categorias
+Content-Type: application/json
+
+{
+  "nombre": "Snacks"
+}
+
+### Actualizar categoría
+PUT {{Cafeteria_API_HostAddress}}/api/categorias/1
+Content-Type: application/json
+
+{
+  "nombre": "Bebidas frías"
+}
+
+### Eliminar categoría
+DELETE {{Cafeteria_API_HostAddress}}/api/categorias/3
+
+### Listar productos
+GET {{Cafeteria_API_HostAddress}}/api/productos
+Accept: application/json
+
+### Obtener un producto
+GET {{Cafeteria_API_HostAddress}}/api/productos/1
+Accept: application/json
+
+### Crear producto
+POST {{Cafeteria_API_HostAddress}}/api/productos
+Content-Type: application/json
+
+{
+  "nombre": "Café con leche",
+  "precio": 120.00,
+  "categoriaId": 1
+}
+
+### Actualizar producto
+PUT {{Cafeteria_API_HostAddress}}/api/productos/1
+Content-Type: application/json
+
+{
+  "nombre": "Café americano",
+  "precio": 100.00,
+  "categoriaId": 1
+}
+
+### Eliminar producto
+DELETE {{Cafeteria_API_HostAddress}}/api/productos/1
