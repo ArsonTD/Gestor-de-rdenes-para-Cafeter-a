@@ -2,7 +2,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Cafeteria_API.Models
 {
-    public class Producto
+    public class Categoria
     {
         public int Id { get; set; }
 
@@ -10,12 +10,7 @@ namespace Cafeteria_API.Models
         [MaxLength(100)]
         public string Nombre { get; set; } = string.Empty;
 
-        public decimal Precio { get; set; }
-
-        
-        public int CategoriaId { get; set; }
-
-      
-        public Categoria? Categoria { get; set; }
+        // Relación uno-a-muchos: una categoría tiene muchos productos
+        public ICollection<Producto> Productos { get; set; } = new List<Producto>();
     }
 }
